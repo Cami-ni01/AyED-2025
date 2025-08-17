@@ -206,7 +206,7 @@ int main() {
     //    cout << (void*)(&v[i]) << "\n";
     for(int i=0; i<5; i++)
     {
-        cout << "direccion: " << (void*)&v[i] << "contenido: " << v[i] << "\n";
+        cout << "direccion: " << (void*)&v[i] << " " <<  "contenido: " << v[i] << "\n";
 
     }
 
