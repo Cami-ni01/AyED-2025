@@ -8,22 +8,35 @@ using namespace std;
 // Implementar aquí para usarlas más abajo.
 // -----------------------------------------------------------------------------
 void swap_por_puntero(int* a, int* b) {
-    // TODO: implementar intercambio clásico usando *a, *b y una variable temporal.
-    // int tmp = *a;
-    // *a = *b;
-    // *b = tmp;
+    // implementar intercambio clásico usando *a, *b y una variable temporal.
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
 
 void swap_si_mayor(int* p, int* q) {
-    // TODO: intercambiar solo si *p > *q.
+    // intercambiar solo si *p > *q.
+    if(*p > *q){
+        int tmp= *p;
+        *p= *q;
+        *q= tmp; 
+    }
 }
 
 void swap_si_menor(int* p, int* q) {
-    // TODO (opcional): intercambiar solo si *p < *q.
+    // intercambiar solo si *p < *q.
+    if(*p < *q){
+        int tmp= *p;
+        *p= *q;
+        *q= tmp; 
+    }
 }
 
 void set_si_positivo(int* p, int valor) {
-    // TODO (opcional): escribir 'valor' en *p solo si valor > 0.
+    // escribir 'valor' en *p solo si valor > 0.
+    if(*p>0){
+        *p= valor;
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -31,17 +44,36 @@ void set_si_positivo(int* p, int valor) {
 // -----------------------------------------------------------------------------
 int suma(const int* arr, int n) {
     // TODO: recorrer arr[0..n-1] y acumular.
-    return 0;
+    int suma=0;
+    for(int i=0; i<n; i++){
+        suma+=arr[i];
+    }
+    return suma;
 }
 
 double promedio(const int* arr, int n) {
     // TODO: usar suma(...) y devolver (double)suma/n si n>0; si n==0 retornar 0.0.
+    //veo si n==0 y en caso de que si devuelvo 0.0
+    if(n==0)
     return 0.0;
+    //si no se retornó devuelvo el promedio
+    return suma(arr,n)/n;
+
 }
 
 int maximo(const int* arr, int n) {
     // TODO (opcional): devolver el mayor valor del arreglo (validar n>0).
+    //valido que n>0, en caso de que no retorno 0
+    if(n==0)
     return 0;
+    //encuentro el mayor valor del arreglo y lo devuelvo 
+    int max= arr[0];
+    for(int i=0; i<n; i++){
+        if(max<arr[i]){
+            max=arr[i];
+        }     
+    }
+    return max;
 }
 
 int main() {
