@@ -43,7 +43,7 @@ void set_si_positivo(int* p, int valor) {
 // (D) Funciones que procesan arreglos pasados por puntero
 // -----------------------------------------------------------------------------
 int suma(const int* arr, int n) {
-    // TODO: recorrer arr[0..n-1] y acumular.
+    // recorrer arr[0..n-1] y acumular.
     int suma=0;
     for(int i=0; i<n; i++){
         suma+=arr[i];
@@ -52,7 +52,7 @@ int suma(const int* arr, int n) {
 }
 
 double promedio(const int* arr, int n) {
-    // TODO: usar suma(...) y devolver (double)suma/n si n>0; si n==0 retornar 0.0.
+    //usar suma(...) y devolver (double)suma/n si n>0; si n==0 retornar 0.0.
     //veo si n==0 y en caso de que si devuelvo 0.0
     if(n==0)
     return 0.0;
@@ -62,7 +62,7 @@ double promedio(const int* arr, int n) {
 }
 
 int maximo(const int* arr, int n) {
-    // TODO (opcional): devolver el mayor valor del arreglo (validar n>0).
+    // devolver el mayor valor del arreglo (validar n>0).
     //valido que n>0, en caso de que no retorno 0
     if(n==0)
     return 0;
