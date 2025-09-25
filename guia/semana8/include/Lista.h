@@ -186,6 +186,24 @@ public:
     // Complejidad: O(n^2) tiempo, O(1) espacio. Estable.
     void bubble_sort_links(bool asc = true) {
         // TODO
+        bool swapped;
+        Nodo<T>* prev= czo;
+        Nodo<T>* end = nullptr;
+        do {
+            // pasada
+            swapped = false;
+            Nodo<T>* p = czo->get_siguiente(); // el nodo actual y empieza desde el principio
+            while(p->get_siguiente()!=end){
+             Nodo<T>* q = p->get_siguiente();
+                if (p->get_dato()>q->get_dato()){
+                    p->set_siguiente(q->get_siguiente());
+                    q->set_siguiente(p);
+                    prev->set_siguiente(q);
+                    swapped = true;
+                }
+                prev=q;
+            }
+            end = p; // algo que tiene que ver con el puntero del final
     }
 
 };
